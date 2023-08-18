@@ -1,5 +1,5 @@
 .ContainerMasterHeader {
-  background-color: #2D4059;
+  background-color: #2d4059;
   width: 100vw;
   height: 22vw;
   display: flex;
@@ -9,6 +9,11 @@
 .ContainerMasterHeader:hover {
   background-color: #374c69;
   transition: ease 0.5s;
+}
+
+.Loading {
+  height: 100vh;
+  position: fixed;
 }
 
 @media (min-width: 1270px) {

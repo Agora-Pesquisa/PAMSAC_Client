@@ -14,8 +14,80 @@
   line-height: normal;
 }
 
+.Loading {
+  margin-left: 0px;
+  justify-content: center;
+}
+
+.Welcome {
+  justify-content: center;
+  text-align: center;
+}
+
+.Welcome h4 {
+  margin-top: 5vw;
+  padding-top: 20vw;
+}
+
+.ldsellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.ldsellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.ldsellipsis div:nth-child(1) {
+  left: 8px;
+  animation: ldsellipsis1 0.6s infinite;
+}
+.ldsellipsis div:nth-child(2) {
+  left: 8px;
+  animation: ldsellipsis2 0.6s infinite;
+}
+.ldsellipsis div:nth-child(3) {
+  left: 32px;
+  animation: ldsellipsis2 0.6s infinite;
+}
+.ldsellipsis div:nth-child(4) {
+  left: 56px;
+  animation: ldsellipsis3 0.6s infinite;
+}
+
 @media (min-width: 1270px) {
   .ContainerMasterUser {
     font-size: 52px;
+  }
+}
+
+@keyframes ldsellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes ldsellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes ldsellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
   }
 }

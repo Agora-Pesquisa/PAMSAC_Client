@@ -15,7 +15,7 @@ const Header = (props) => {
     <div
       id={props.userSelecionado} // Define o ID do elemento com base no usuário selecionado
       onClick={handleClick} // Define a função de clique para o elemento
-      className={styles.ContainerMasterHeader} // Aplica a classe de estilo ao contêiner do cabeçalho
+      className={`${styles.ContainerMasterHeader} , ${props.userSelecionado === "Bem-vindo!" ? styles.Loading : ""}`} // Aplica a classe de estilo ao contêiner do cabeçalho
     >
       {/* Componente User para exibir o nome do usuário */}
       <User user={props.userSelecionado} />
