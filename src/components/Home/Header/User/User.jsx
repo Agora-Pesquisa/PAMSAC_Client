@@ -9,7 +9,7 @@ const User = (props) => {
       id={props.user} // Define o ID do elemento com base no usuário recebido via propriedade
       className={styles.ContainerMasterUser} // Aplica a classe de estilo ao contêiner do nome do usuário
     >
-      {props.user} {/* Exibe o nome do usuário */}
+      {props.user} AAA{/* Exibe o nome do usuário */}
     </div>
   );
 };
