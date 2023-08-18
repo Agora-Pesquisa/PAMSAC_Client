@@ -12,19 +12,19 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  transition: 1.1s ease;
+  transition: 1.3s ease;
 }
 
 .Loading {
   margin-left: 0px;
   justify-content: center;
-  transition: 1.1s ease;
+  transition: 1.3s ease;
 }
 
 .Welcome {
   justify-content: center;
   text-align: center;
-  transition: 1.1s ease;
+  transition: 1.3s ease;
 }
 
 .Welcome h4 {
