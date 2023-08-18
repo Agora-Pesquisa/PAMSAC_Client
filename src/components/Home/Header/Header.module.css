@@ -3,17 +3,18 @@
   width: 100vw;
   height: 22vw;
   display: flex;
-  transition: ease 0.5s;
+  transition: ease 0.7s;
 }
 
 .ContainerMasterHeader:hover {
   background-color: #374c69;
-  transition: ease 0.5s;
+  transition: ease 0.7s;
 }
 
 .Loading {
   height: 100vh;
   position: fixed;
+  transition: ease 0.7s;
 }
 
 @media (min-width: 1270px) {
