@@ -3,7 +3,14 @@
   width: 100vw;
   height: 22vw;
   display: flex;
+  position: fixed;
   transition: ease 0.7s;
+  z-index: 2;
+}
+
+.line {
+  padding-top: 22vw;
+  position: fixed;
 }
 
 .ContainerMasterHeader:hover {

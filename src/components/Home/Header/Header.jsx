@@ -2,6 +2,7 @@ import React from "react"; // Importação do React
 import User from "./User/User"; // Importação do componente User
 import UserCircle from "./UserCircle/UserCircle"; // Importação do componente UserCircle
 import styles from "./Header.module.css"; // Importação do módulo de estilos específico para o componente
+import Line from "../Body/Line/Line";
 
 // Componente funcional para o cabeçalho
 const Header = (props) => {
@@ -12,15 +13,20 @@ const Header = (props) => {
 
   // Renderização do componente de cabeçalho
   return (
-    <div
-      id={props.userSelecionado} // Define o ID do elemento com base no usuário selecionado
-      onClick={handleClick} // Define a função de clique para o elemento
-      className={`${styles.ContainerMasterHeader} , ${props.userSelecionado === "Bem-vindo!" ? styles.Loading : ""}`} // Aplica a classe de estilo ao contêiner do cabeçalho
-    >
-      {/* Componente User para exibir o nome do usuário */}
-      <User user={props.userSelecionado} />
-      {/* Componente UserCircle para exibir o círculo do usuário */}
-      <UserCircle user={props.userSelecionado} />
+    <div className={styles.Master}>
+      <div
+        id={props.userSelecionado} // Define o ID do elemento com base no usuário selecionado
+        onClick={handleClick} // Define a função de clique para o elemento
+        className={`${styles.ContainerMasterHeader} , ${
+          props.userSelecionado === "Bem-vindo!" ? styles.Loading : ""
+        }`} // Aplica a classe de estilo ao contêiner do cabeçalho
+      >
+        {/* Componente User para exibir o nome do usuário */}
+        <User user={props.userSelecionado} />
+        {/* Componente UserCircle para exibir o círculo do usuário */}
+        <UserCircle user={props.userSelecionado} />
+      </div>
+      
     </div>
   );
 };

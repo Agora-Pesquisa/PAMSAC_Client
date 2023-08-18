@@ -90,7 +90,10 @@ const Body = (props) => {
     <div>
       <div className={styles.BoxesContainer}>
         {/* Linha divisória */}
-        <Line />
+        <div className={`${styles.Fixed} ${medicaoSatisfacao.length > 0 ? "" : styles.LineLoading}`}>
+        <Line loading={true}/>
+
+        </div>
 
         {/* Container de BigBoxes */}
         <div className={styles.BigBox}>

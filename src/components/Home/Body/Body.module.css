@@ -9,6 +9,20 @@
   white-space: nowrap;
 }
 
+.Fixed {
+  position: fixed;
+  margin-top: 0;
+  transition: 0.8s ease;
+  z-index: 1;
+
+}
+
+.LineLoading {
+  margin-top: 100vh;
+  transition: 0.8s ease;
+}
+
+
 .BigBox {
   display: flex;
 }
@@ -64,6 +78,7 @@
   }
 
   .BoxesContainer {
+    margin-top: 0;
     display: flex;
     justify-content: space-between;
   }

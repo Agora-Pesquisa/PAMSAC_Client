@@ -71,7 +71,6 @@ const CardGeralRight = (props) => {
       {/* Contêiner do processo e da opção "Todos" */}
       <div className={`${styles.ContainerProcesso}`}>
         <p>{props.processo}</p>
-        <p>Todos</p>
       </div>
       
       {/* Contêiner para as informações gerais */}
