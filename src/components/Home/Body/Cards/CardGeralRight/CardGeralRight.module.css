@@ -1,0 +1,153 @@
+.muitoAtrasadoPrimaryColor {
+  background-color: #dc0000;
+}
+
+.muitoAtrasadoSecondaryColor {
+  background-color: #ffeaea;
+}
+
+.atrasadoPrimaryColor {
+  background-color: #f77e21;
+}
+
+.atrasadoSecondaryColor {
+  background-color: #ede1cf;
+}
+
+.normalPrimaryColor {
+  background-color: #f7c04a;
+}
+
+.normalSecondaryColor {
+  background-color: #fff6c2;
+}
+
+.adiantadoPrimaryColor {
+  background-color: #7fb77e;
+}
+
+.adiantadoSecondaryColor {
+  background-color: #d1e9dc;
+}
+
+.concluidoPrimaryColor {
+  background-color: #39a2db;
+}
+
+.concluidoSecondaryColor {
+  background-color: #e0f6fd;
+}
+
+.ContainerMasterCardGeralRight {
+  overflow: hidden;
+  margin-top: 5vw;
+  width: 95vw;
+  margin-left: 5vw;
+  border: 0.5vw solid black;
+  border-right: 0px;
+  border-radius: 5vw 0 0 5vw;
+}
+
+.ContainerMasterCardGeralRight p {
+  font-size: 5vw;
+  font-weight: 800;
+
+  color: white;
+  text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 0.2vw -1px 0 #000,
+    0.2vw 0 0 #000, 0.2vw 0.2vw 0 #000, 0 0.2vw 0 #000, -1px 0.2vw 0 #000,
+    -1px 0 0 #000;
+}
+
+.ContainerMasterText {
+  border-top: 0.5vw solid black;
+  width: 35vw;
+}
+
+.ContainerText {
+  margin-left: 2.5vw;
+  margin-bottom: 1.5vw;
+  width: 35vw;
+}
+.ContainerProcesso {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  height: 8vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7c9d96;
+}
+
+.ContainerProcesso p {
+  font-size: 6vw;
+  font-weight: 600;
+}
+
+.ContainerInfo {
+  display: flex;
+}
+
+.ImageBox {
+  display: flex;
+  justify-content: center;
+  margin: 2vw 0;
+  margin-left: -5vw;
+}
+
+.face {
+  height: 8vw;
+}
+@media (min-width: 1270px) {
+  .face {
+    height: 75px;
+    width: 75px;
+    margin-top: -15px;
+  }
+
+  .ImageBox {
+    margin: 0;
+  }
+
+  .ContainerMasterCardGeralRight {
+    width: 10px;
+    min-width: 97vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    margin-top: 1.5vw;
+    border: 3px solid black;
+    border-right: 3px solid black;
+    border-radius: 50px 50px 50px 50px;
+  }
+
+  .ContainerMasterCardGeralRight p {
+    font-size: 30px;
+    font-weight: 800;
+
+    color: white;
+    text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 0.2vw -1px 0 #000,
+      0.2vw 0 0 #000, 0.2vw 0.2vw 0 #000, 0 0.2vw 0 #000, -1px 0.2vw 0 #000,
+      -1px 0 0 #000;
+  }
+
+  .ContainerProcesso {
+    border-top: 0;
+    height: 50px;
+  }
+
+  .ContainerProcesso p {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .ContainerText {
+    margin-left: 1.5vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    width: 12.5vw;
+  }
+
+  .ContainerMasterText {
+    border-top: 3px solid black;
+    width: 35vw;
+  }
+}

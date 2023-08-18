@@ -1,0 +1,87 @@
+.muitoAtrasadoPrimaryColor {
+  background-color: #dc0000;
+}
+
+.muitoAtrasadoSecondaryColor {
+  background-color: #ffeaea;
+}
+.atrasadoPrimaryColor {
+  background-color: #f77e21;
+}
+
+.atrasadoSecondaryColor {
+  background-color: #ede1cf;
+}
+
+.normalPrimaryColor {
+  background-color: #f7c04a;
+}
+
+.normalSecondaryColor {
+  background-color: #fff6c2;
+}
+
+.adiantadoPrimaryColor {
+  background-color: #7fb77e;
+}
+
+.adiantadoSecondaryColor {
+  background-color: #d1e9dc;
+}
+
+.concluidoPrimaryColor {
+  background-color: #39a2db;
+}
+
+.concluidoSecondaryColor {
+  background-color: #e0f6fd;
+}
+
+.ContainerMasterText {
+  border-left: 0.5vw solid black;
+  min-width: 19.5vw;
+}
+
+.ContainerText {
+  justify-content: center;
+  margin-top: 1.5vw;
+  margin-bottom: 1.5vw;
+  text-align: center;
+}
+
+.ContainerCompania {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 0.5vw solid black;
+  height: 11vw;
+}
+
+.image {
+  flex-shrink: 0;
+  height: 8vw;
+  width: 20vw;
+}
+
+@media (min-width: 1270px) {
+  .image {
+    height: 100px;
+    width: 100px;
+  }
+
+  .ContainerMasterText {
+    border-left: 3px solid black;
+    min-width: 11.25vw;
+  }
+
+  .ContainerCompania {
+    border-top: 3px solid black;
+    height: 50px;
+  }
+
+  .ContainerText {
+    margin-top: 20px;
+    margin-bottom: 0.5vw;
+  }
+}

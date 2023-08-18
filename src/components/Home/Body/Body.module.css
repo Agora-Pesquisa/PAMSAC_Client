@@ -1,0 +1,80 @@
+.CompanyBox {
+  display: flex;
+  width: 90vw;
+  margin-left: 5vw;
+  margin-top: 5%;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.BigBox {
+  display: flex;
+}
+
+.muitoAtrasadoPrimaryColor {
+  background-color: #dc0000;
+}
+
+.muitoAtrasadoSecondaryColor {
+  background-color: #ffcac846;
+}
+
+.atrasadoPrimaryColor {
+  background-color: #f77e21;
+}
+
+.atrasadoSecondaryColor {
+  background-color: #ede1cf;
+}
+
+.normalPrimaryColor {
+  background-color: #f7c04a;
+}
+
+.normalSecondaryColor {
+  background-color: #fff6c346;
+}
+
+.adiantadoPrimaryColor {
+  background-color: #7fb77e;
+}
+
+.adiantadoSecondaryColor {
+  background-color: #d1e9dc;
+}
+
+.concluidoPrimaryColor {
+  background-color: #39a2db;
+}
+
+.concluidoSecondaryColor {
+  background-color: #e0f6fd;
+}
+
+@media (min-width: 1270px) {
+  .ContainerCards {
+    margin-top: 2vw;
+  }
+
+  .ContainerCategoryCompanyBox {
+    padding-left: 1%;
+    min-width: 50%;
+  }
+
+  .BoxesContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .CompanyBox {
+    margin-top: 0;
+    margin-left: 0px;
+    overflow-x: hidden;
+  }
+
+  .BigBox {
+    min-width: 50%;
+  }
+}

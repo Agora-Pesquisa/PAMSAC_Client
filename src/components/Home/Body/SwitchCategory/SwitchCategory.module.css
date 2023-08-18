@@ -1,0 +1,77 @@
+.ContainerMasterSwitchCategory {
+  width: 90vw;
+  height: 8vw;
+  margin-left: 5vw;
+  margin-top: 5vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ContainerButton {
+  display: flex;
+  border-radius: 0px 3vw 3vw 0;
+  min-width: 45%;
+  text-align: center;
+  align-items: center;
+  transition: ease 0.25s;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: white;
+}
+
+.ContainerButton:hover {
+  color: #2d4059;
+  transition: ease 0.25s;
+}
+
+.SideLine {
+  height: 8vw;
+}
+
+.Button {
+  background-color: transparent;
+  color: #be214f;
+  border: none;
+  padding: 2vw;
+  width: 100%;
+  font-family: "League Spartan", sans-serif;
+  border-radius: 0px 3vw 3vw 0;
+
+  font-size: 4.5vw;
+  font-weight: 700;
+}
+
+.Selected {
+  background-color: #e6d5ce;
+  color: #2d4059;
+}
+
+@media (min-width: 1270px) {
+  .ContainerMasterSwitchCategory {
+    margin-left: 0;
+
+    margin-top: 0;
+    width: 500px;
+    height: 50px;
+  }
+
+  .Button {
+    font-size: 24px;
+    padding: 0;
+  }
+
+  .SideLine {
+    height: 50px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .ContainerMasterSwitchCategory {
+    margin-left: 6%;
+  }
+}
+
+@media (min-width: 2560px) {
+  .ContainerMasterSwitchCategory {
+    margin-left: 12%;
+  }
+}

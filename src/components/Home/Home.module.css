@@ -1,0 +1,11 @@
+.Home {
+  overflow: hidden;
+  background-color: #f4fbff;
+}
+
+/* @media (min-width: 1921px) {
+  .Home {
+    border: 5px solid red;
+    max-width: 1920px;
+  }
+} */

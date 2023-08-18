@@ -1,0 +1,23 @@
+.ContainerMasterLine {
+  display: flex;
+  justify-content: center;
+}
+
+.LineYellow {
+  width: 50vw;
+  height: 4px;
+  background-color: #FBB019;
+}
+
+.LineRed{
+  width: 50vw;
+  height: 4px;
+  background-color: #BE214F;
+}
+
+
+@media (min-width: 1270px) {
+  .ContainerMasterLine {
+    display: none;
+  }
+}
