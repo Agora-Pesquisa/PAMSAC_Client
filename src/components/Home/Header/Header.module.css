@@ -22,4 +22,9 @@
     border-bottom: 3px solid black;
     margin-bottom: 2vw;
   }
+
+  .Loading {
+    height: 100vh;
+    position: fixed;
+  }
 }
