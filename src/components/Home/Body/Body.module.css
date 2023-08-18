@@ -12,14 +12,14 @@
 .Fixed {
   position: fixed;
   margin-top: 0;
-  transition: 0.8s ease;
+  transition: 1.2s ease;
   z-index: 1;
 
 }
 
 .LineLoading {
   margin-top: 100vh;
-  transition: 0.8s ease;
+  transition: 1.2s ease;
 }
 
 
