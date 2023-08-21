@@ -37,8 +37,6 @@ const CardRight = (props) => {
     }
   }, [props.diario, props.real]);
 
-  console.log(props.imageCompaniaSrc === null ? console.log("Sim"): "");
-
   return (
     // Contêiner principal do componente CardRight
     <div className={`${styles.ContainerMasterCardRight} ${secondaryColor}`}>
