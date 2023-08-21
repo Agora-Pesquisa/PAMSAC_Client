@@ -21,14 +21,16 @@ const CardGeralRight = (props) => {
     ) {
       setSecondaryColor(styles.adiantadoSecondaryColor);
       setFace(adiantado);
-    }  if (
-      props.realAzul / props.diarioAzul === Infinity ||
-      props.realGol / props.diarioGol === Infinity ||
-      props.realLatam / props.diarioLatam === Infinity
+    }
+    if (
+      props.faltamAzul === 0 ||
+      props.faltamGol === 0 ||
+      props.faltamLatam === 0
     ) {
       setSecondaryColor(styles.concluidoSecondaryColor);
       setFace(concluido);
-    }  if (
+    }
+    if (
       (props.realAzul / props.diarioAzul >= 0.8 &&
         props.realAzul / props.diarioAzul < 1.1) ||
       (props.realGol / props.diarioGol >= 0.8 &&
@@ -38,14 +40,16 @@ const CardGeralRight = (props) => {
     ) {
       setSecondaryColor(styles.normalSecondaryColor);
       setFace(normal);
-    }  if (
+    }
+    if (
       (props.realAzul / props.diarioAzul <= 0.8 && props.faltamAzul > 0) ||
       (props.realGol / props.diarioGol <= 0.8 && props.faltamGol > 0) ||
       (props.realLatam / props.diarioLatam <= 0.8 && props.faltamLatam > 0)
     ) {
       setSecondaryColor(styles.muitoAtrasadoSecondaryColor);
       setFace(muitoAtrasado);
-    }  if (
+    }
+    if (
       (props.realAzul / props.diarioAzul >= 0.6 &&
         props.realAzul / props.diarioAzul < 0.8) ||
       (props.realGol / props.diarioGol >= 0.6 &&
@@ -67,12 +71,14 @@ const CardGeralRight = (props) => {
 
   return (
     // Contêiner principal do componente CardGeralRight
-    <div className={`${styles.ContainerMasterCardGeralRight} ${secondaryColor}`}>
+    <div
+      className={`${styles.ContainerMasterCardGeralRight} ${secondaryColor}`}
+    >
       {/* Contêiner do processo e da opção "Todos" */}
       <div className={`${styles.ContainerProcesso}`}>
         <p>{props.processo}</p>
       </div>
-      
+
       {/* Contêiner para as informações gerais */}
       <div className={styles.ContainerInfo}>
         <div className={styles.ContainerMasterText}>
@@ -88,7 +94,7 @@ const CardGeralRight = (props) => {
             <p>· Diário </p>
           </div>
         </div>
-        
+
         {/* Componente CardGeralInfo para exibir informações da companhia Azul */}
         <CardGeralInfo
           compania={props.companiaAzul}
@@ -98,7 +104,7 @@ const CardGeralRight = (props) => {
           real={props.realAzul}
           meta={props.metaAzul}
         />
-        
+
         {/* Componente CardGeralInfo para exibir informações da companhia Gol */}
         <CardGeralInfo
           compania={props.companiaGol}
@@ -108,7 +114,7 @@ const CardGeralRight = (props) => {
           real={props.realGol}
           meta={props.metaGol}
         />
-        
+
         {/* Componente CardGeralInfo para exibir informações da companhia Latam */}
         <CardGeralInfo
           processo={props.processoLatam}

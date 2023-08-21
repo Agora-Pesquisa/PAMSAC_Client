@@ -31,11 +31,13 @@ const CardRight = (props) => {
       setSecondaryColor(styles.adiantadoSecondaryColor);
       setFace(adiantado);
     }
-    if (props.real / props.diario === Infinity || props.faltam === 0) {
+    if (props.faltam === 0) {
       setSecondaryColor(styles.concluidoSecondaryColor);
       setFace(concluido);
     }
   }, [props.diario, props.real]);
+
+  console.log(props.imageCompaniaSrc === null ? console.log("Sim"): "");
 
   return (
     // Contêiner principal do componente CardRight
@@ -48,7 +50,7 @@ const CardRight = (props) => {
             : ""
         }`}
       >
-        <h1>{props.processo}</h1> {/* Título do processo */}
+        <p>{props.processo}</p> {/* Título do processo */}
       </div>
       {/* Subcontêiner para as informações do cartão */}
       <div className={styles.subContainerMasterCardRight}>

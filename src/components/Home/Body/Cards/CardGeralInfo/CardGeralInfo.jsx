@@ -19,7 +19,7 @@ const CardGeralInfo = (props) => {
     if (props.real / props.diario >= 1.1) {
       setSecondaryColorInfo(styles.adiantadoSecondaryColor);
     }
-    if (props.real / props.diario === Infinity || props.faltam === 0) {
+    if (props.faltam === 0) {
       setSecondaryColorInfo(styles.concluidoSecondaryColor);
     }
   }, [props.real, props.diario]);

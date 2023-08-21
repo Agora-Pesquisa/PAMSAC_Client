@@ -23,9 +23,6 @@ const CardGeralLeft = (props) => {
       setFace(adiantado);
     }
     if (
-      props.realAzul / props.diarioAzul === Infinity ||
-      props.realGol / props.diarioGol === Infinity ||
-      props.realLatam / props.diarioLatam === Infinity ||
       props.faltamAzul === 0 ||
       props.faltamGol === 0 ||
       props.faltamLatam === 0

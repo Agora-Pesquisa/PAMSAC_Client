@@ -44,10 +44,11 @@
   margin-top: 5vw;
   width: 95vw;
   margin-left: 5vw;
-  border: 0.5vw solid black;
   border-right: 0px;
   border-radius: 5vw 0 0 5vw;
   transition: 0.15s ease;
+
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .subContainerMasterCardRight {
@@ -55,6 +56,8 @@
 }
 
 .ContainerImage {
+  display: grid;
+
   max-width: 30%;
   align-items: center;
   justify-content: center;
@@ -75,6 +78,8 @@
   margin-top: 1.5vw;
   margin-bottom: 1.5vw;
 
+  margin-left: 6vw;
+  display: grid;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -84,12 +89,10 @@
 }
 .ContainerMasterInfo p {
   padding-right: 20px;
+
   font-size: 5vw;
   font-weight: 800;
-  color: white;
-  text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 0.2vw -1px 0 #000,
-    0.2vw 0 0 #000, 0.2vw 0.2vw 0 #000, 0 0.2vw 0 #000, -1px 0.2vw 0 #000,
-    -1px 0 0 #000;
+  color: #2d4059;
 }
 
 .face {
@@ -107,23 +110,23 @@
   margin-left: -10%;
   width: 90%;
   height: 100%;
-  border-right: 0.5vw solid black;
+  border-right: 0.2vw solid #2d4059;
   background-color: #000;
 }
 
 .compania {
   flex-shrink: 0;
-  height: 40%;
+  height: 100%;
   width: 40%;
-  margin-top: -30px;
+  margin-top: -15px;
   margin-bottom: 20px;
+  margin-left: 30%;
 }
 
 .TopCardContainer {
   padding-left: 5vw;
   padding-right: 5vw;
   height: 8vw;
-  border-bottom: 0.5vw solid black;
 
   display: flex;
   align-items: center;
@@ -133,31 +136,32 @@
   background-color: #7c9d96;
   color: white;
 
-  font-size: 3vw;
-  font-weight: 800;
-  color: white;
-  text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 0.2vw -1px 0 #000,
-    0.2vw 0 0 #000, 0.2vw 0.2vw 0 #000, 0 0.2vw 0 #000, -1px 0.2vw 0 #000,
-    -1px 0 0 #000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .TopCardContainer p {
   color: white;
-  font-size: 5vw;
-  font-weight: 600;
-
-  text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 0.2vw -1px 0 #000,
-    0.2vw 0 0 #000, 0.2vw 0.2vw 0 #000, 0 0.2vw 0 #000, -1px 0.2vw 0 #000,
-    -1px 0 0 #000;
+  font-size: 5.3vw;
+  font-weight: 800;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .Pesquisa {
   background-color: hsl(0, 100%, 86%);
 }
 
+
 @media (max-width: 500px) {
   .compania {
-    margin-top: -15px;
+    margin-top: -10px;
+  }
+
+  .face {
+   padding-top: 10px;
+  }
+  .ContainerMasterInfo{
+    margin-top: 3vw;
+    margin-bottom: 3vw;
   }
 }
 
@@ -169,7 +173,6 @@
   .TopCardContainer {
     font-size: 20px;
     height: 50px;
-    border-bottom: 3px solid black;
   }
 
   .ContainerMasterCardRight {
@@ -182,9 +185,6 @@
     border: 3px solid black;
     border-right: 3px solid black;
     border-radius: 50px 50px 50px 50px;
-
-    text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000,
-      1px 1px 0 #000, 0 1px 0 #000, -1px 1px 0 #000, -1px 0 0 #000;
   }
 
   .subContainerMasterCardRight {
