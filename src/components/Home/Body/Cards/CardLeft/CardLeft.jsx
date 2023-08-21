@@ -89,7 +89,7 @@ const CardLeft = (props) => {
           {/* Informações sobre o diário */}
           <div className={styles.ContainerInfo}>
             <p>· Diário :</p>
-            <p>{props.diario}</p>
+            <p>{props.diario < 0 ? 0 : props.diario}</p>
           </div>
         </div>
       </div>
