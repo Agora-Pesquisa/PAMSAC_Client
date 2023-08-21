@@ -14,7 +14,7 @@ const User = (props) => {
     >
       {props.user === "Bem-vindo!" ? (
         <div className={styles.Welcome}>
-          <h3>Bem-vindo(a) !</h3>
+          <h3>Bem-vindo(a)!</h3>
           <h4>Carregando dados...</h4>
           <div className={styles.ldsellipsis}>
             <div></div>

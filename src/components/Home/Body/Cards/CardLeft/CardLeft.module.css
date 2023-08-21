@@ -149,7 +149,7 @@
 }
 
 .Pesquisa {
-  background-color: hsl(0, 100%, 86%);
+  background-color: #60769d
 }
 
 @media (max-width: 500px) {
@@ -158,9 +158,9 @@
   }
 
   .face {
-   padding-top: 0px;
+    padding-top: 0px;
   }
-  .ContainerMasterInfo{
+  .ContainerMasterInfo {
     margin-top: 3vw;
     margin-bottom: 3vw;
   }

@@ -72,22 +72,22 @@ const CardRight = (props) => {
         <div className={` ${styles.ContainerMasterInfo}`}>
           {/* Informações sobre a meta */}
           <div className={styles.ContainerInfo}>
-            <p>· Meta :</p>
+            <p>· Meta</p>
             <p>{props.meta}</p>
           </div>
           {/* Informações sobre realizados */}
           <div className={styles.ContainerInfo}>
-            <p>· Realizados :</p>
+            <p>· Realizados</p>
             <p>{props.realizados}</p>
           </div>
           {/* Informações sobre o que falta */}
           <div className={styles.ContainerInfo}>
-            <p>· Faltam :</p>
+            <p>· Faltam</p>
             <p>{props.faltam}</p>
           </div>
           {/* Informações sobre o diário */}
           <div className={styles.ContainerInfo}>
-            <p>· Diário :</p>
+            <p>· Diário</p>
             <p>{props.diario < 0 ? 0 : props.diario}</p>
           </div>
         </div>
