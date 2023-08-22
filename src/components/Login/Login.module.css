@@ -6,7 +6,7 @@
 
   overflow-x: hidden;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   text-align: center;
 }
 
@@ -16,14 +16,13 @@
 }
 
 .logoMinisterio {
-  margin-top: 20vh;
-  width: 85vw;
+  margin-top: 30%;
+  width: 85%;
 }
 
 .logoAgora {
-  margin-top: 4vh;
-  width: 85vw;
-  height: 30vh;
+  width: 85%;
+  height: 30%;
 }
 
 .formLogin {
