@@ -35,6 +35,7 @@ const Home = () => {
       // Chama a função para obter dados da API
       const dadosDaAPI = await getDados(login, senha);
       console.log("Dados da API - Home: ", dadosDaAPI);
+      console.log(login, senha);
 
       // Cria um conjunto de IDs de pesquisadores únicos
       const ids = [...new Set(dadosDaAPI.map((item) => item.id_pesquisador))];
