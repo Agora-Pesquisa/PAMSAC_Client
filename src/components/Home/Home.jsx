@@ -8,6 +8,7 @@ import { getDados } from "../../services/dados"; // Importação da função par
 import Header from "./Header/Header"; // Importação do componente de cabeçalho
 import Body from "./Body/Body"; // Importação do componente de corpo
 import Bottom from "./Bottom/Bottom"; // Importação do componente inferior
+import Admin from "./Admin/Admin";
 
 // Componente funcional para a página de Home
 const Home = () => {
@@ -50,10 +51,14 @@ const Home = () => {
       // Atualiza os estados com os dados obtidos da API
       setDadosDaAPI(dadosDaAPI);
       setAeroporto(aeroporto[0]);
-      setPesquisador(nomes[indexNome]);
 
-      // Inicialmente, o usuário selecionado é o nome do pesquisador
-      selecionarUser(nomes[indexNome]);
+      if (login === "admin" && senha === "admin") {
+        setPesquisador("Admin");
+        selecionarUser("Admin");
+      } else {
+        setPesquisador(nomes[indexNome]);
+        selecionarUser(nomes[indexNome]);
+      }
     } catch (error) {
       console.error("Deu erro no Home - fetchDados", error);
       // Navega de volta para a página de Login com estado inválido
@@ -66,7 +71,7 @@ const Home = () => {
   // Função para alternar entre exibir nome do pesquisador e código do aeroporto
   const selecionarUser = (user) => {
     // Verifica se o usuário atual é igual ao pesquisador atual
-    if (userSelecionado === pesquisador) {
+    if (userSelecionado === pesquisador && userSelecionado !== "Admin") {
       // Se sim, exibe o código do aeroporto
       setUserSelecionado(aeroporto);
     } else {
@@ -80,17 +85,18 @@ const Home = () => {
     }
   };
 
-  // Renderização do componente de Home
   return (
     <div key={Date.getTime} className={styles.Home}>
-      {/* Componente de cabeçalho */}
       <Header
         selecionarUser={selecionarUser}
         userSelecionado={userSelecionado}
       />
-      {/* Componente de corpo */}
-      <Body userSelecionado={userSelecionado} dadosDaAPI={dadosDaAPI} />
-      {/* Componente inferior */}
+      {userSelecionado === "Admin" ? (
+        <Admin dadosDaAPI={dadosDaAPI}/>
+      ) : (
+        <Body userSelecionado={userSelecionado} dadosDaAPI={dadosDaAPI} />
+      )}
+
       <Bottom />
     </div>
   );

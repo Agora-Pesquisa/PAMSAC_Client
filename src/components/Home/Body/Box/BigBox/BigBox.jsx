@@ -19,7 +19,7 @@ const BigBox = (props) => {
       setPrimaryColor(styles.normalPrimaryColor);
       setSecondaryColor(styles.normalSecondaryColor);
     }
-    if (props.real / props.diario >= 1.1) {
+    if (props.real / props.diario >= 1.1 ||  props.diario === 0 && props.faltam >= 1) {
       setPrimaryColor(styles.adiantadoPrimaryColor);
       setSecondaryColor(styles.adiantadoSecondaryColor);
     }

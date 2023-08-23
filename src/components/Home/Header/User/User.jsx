@@ -1,6 +1,5 @@
 import React from "react"; // Importação do React
 import styles from "./User.module.css"; // Importação do módulo de estilos específico para o componente
-import Line from "../../Body/Line/Line";
 
 // Componente funcional para exibir o nome do usuário
 const User = (props) => {
@@ -26,7 +25,6 @@ const User = (props) => {
       ) : (
         props.user
       )}
-      {/* Exibe o nome do usuário */}
     </div>
   );
 };

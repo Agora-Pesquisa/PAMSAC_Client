@@ -2,7 +2,6 @@ import React from "react"; // Importação do React
 import User from "./User/User"; // Importação do componente User
 import UserCircle from "./UserCircle/UserCircle"; // Importação do componente UserCircle
 import styles from "./Header.module.css"; // Importação do módulo de estilos específico para o componente
-import Line from "../Body/Line/Line";
 
 // Componente funcional para o cabeçalho
 const Header = (props) => {
@@ -26,7 +25,6 @@ const Header = (props) => {
         {/* Componente UserCircle para exibir o círculo do usuário */}
         <UserCircle user={props.userSelecionado} />
       </div>
-      
     </div>
   );
 };

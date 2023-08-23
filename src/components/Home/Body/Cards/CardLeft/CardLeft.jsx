@@ -27,7 +27,7 @@ const CardLeft = (props) => {
       setSecondaryColor(styles.normalSecondaryColor);
       setFace(normal);
     }
-    if (props.real / props.diario >= 1.1) {
+    if (props.real / props.diario >= 1.1 ||  props.diario === 0 && props.faltam >= 1) {
       setSecondaryColor(styles.adiantadoSecondaryColor);
       setFace(adiantado);
     }
@@ -89,7 +89,7 @@ const CardLeft = (props) => {
           {/* Informações sobre o diário */}
           <div className={styles.ContainerInfo}>
             <p>· Diário</p>
-            <p>{props.diario <= 0  || props.faltam === 0 ? 0 : props.diario}</p>
+            <p>{props.diario < 0 || props.faltam === 0 ? 0 : props.diario === 0 && props.faltam >= 1 ? 1 : props.diario}</p>
           </div>
         </div>
       </div>

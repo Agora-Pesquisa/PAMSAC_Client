@@ -11,13 +11,17 @@ const CardGeralRight = (props) => {
   // Estado para armazenar a cor secundária e a imagem facial correspondente
   const [secondaryColor, setSecondaryColor] = useState("");
   const [face, setFace] = useState("");
+  console.log(props.realGol, props.diarioGol);
 
   useEffect(() => {
     // Lógica para determinar a cor e a imagem facial com base nas proporções das companhias e nos valores de faltam
     if (
       props.realAzul / props.diarioAzul > 1.1 ||
       props.realGol / props.diarioGol > 1.1 ||
-      props.realLatam / props.diarioLatam > 1.1
+      props.realLatam / props.diarioLatam > 1.1 ||
+      (props.diarioAzul === 0 && props.faltamAzul >= 1) ||
+      (props.diarioGol === 0 && props.faltamGol >= 1) ||
+      (props.diarioLatam === 0 && props.faltamLatam >= 1)
     ) {
       setSecondaryColor(styles.adiantadoSecondaryColor);
       setFace(adiantado);
@@ -42,9 +46,15 @@ const CardGeralRight = (props) => {
       setFace(normal);
     }
     if (
-      (props.realAzul / props.diarioAzul <= 0.8 && props.faltamAzul > 0) ||
-      (props.realGol / props.diarioGol <= 0.8 && props.faltamGol > 0) ||
-      (props.realLatam / props.diarioLatam <= 0.8 && props.faltamLatam > 0)
+      (props.realAzul / props.diarioAzul <= 0.8 &&
+        props.faltamAzul > 0 &&
+        !(props.diarioAzul === 0 && props.faltamAzul >= 1)) ||
+      (props.realGol / props.diarioGol <= 0.8 &&
+        props.faltamGol > 0 &&
+        !(props.diarioGol === 0 && props.faltamGol >= 1)) ||
+      (props.realLatam / props.diarioLatam <= 0.8 &&
+        props.faltamLatam > 0 &&
+        !(props.diarioLatam === 0 && props.faltamLatam >= 1))
     ) {
       setSecondaryColor(styles.muitoAtrasadoSecondaryColor);
       setFace(muitoAtrasado);

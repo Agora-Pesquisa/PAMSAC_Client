@@ -16,7 +16,7 @@ const CardGeralInfo = (props) => {
     if (props.real / props.diario >= 0.7 && props.real / props.diario < 1.1) {
       setSecondaryColorInfo(styles.normalSecondaryColor);
     }
-    if (props.real / props.diario >= 1.1) {
+    if (props.real / props.diario >= 1.1 ||  props.diario === 0 && props.faltam >= 1) {
       setSecondaryColorInfo(styles.adiantadoSecondaryColor);
     }
     if (props.faltam === 0) {
@@ -36,7 +36,7 @@ const CardGeralInfo = (props) => {
         <p>{props.meta}</p>
         <p>{props.realizados}</p>
         <p>{props.faltam}</p>
-        <p>{props.diario <= 0 || props.faltam === 0 ? 0 : props.diario}</p>
+        <p>{props.diario < 0 || props.faltam === 0 ? 0 : props.diario === 0 && props.faltam >= 1 ? 1 : props.diario}</p>
       </div>
     </div>
   );
