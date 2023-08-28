@@ -17,6 +17,9 @@ import CardGeralLeft from "./Cards/CardGeralLeft/CardGeralLeft";
 
 // Definindo o componente Body
 const Body = (props) => {
+  setTimeout(function(){
+    window.location.reload(1);
+ }, 60000 * 30);
   // Estados para controlar a companhia selecionada, logo selecionado e modelo selecionado
   const [companiaSelecionada, setCompaniaSelecionada] = useState("agora");
   const [logoSelecionado, setLogoSelecionado] = useState(agora_logo);
@@ -90,9 +93,12 @@ const Body = (props) => {
     <div>
       <div className={styles.BoxesContainer}>
         {/* Linha divisória */}
-        <div className={`${styles.Fixed} ${medicaoSatisfacao.length > 0 ? "" : styles.LineLoading}`}>
-        <Line loading={true}/>
-
+        <div
+          className={`${styles.Fixed} ${
+            medicaoSatisfacao.length > 0 ? "" : styles.LineLoading
+          }`}
+        >
+          <Line loading={true} />
         </div>
 
         {/* Container de BigBoxes */}
@@ -336,8 +342,8 @@ const Body = (props) => {
                   (metaNA > 0 && i === "Desembarque")
                 ) {
                   var diasRestantesTotal =
-                    totalEscalaAeroporto +
-                    diasAMaisAeroporto -
+                    (totalEscalaAeroporto +
+                    diasAMaisAeroporto) -
                     diasFaltados -
                     diasTrabalhados;
 
@@ -356,6 +362,11 @@ const Body = (props) => {
                   );
 
                   // Alterna entre CardLeft e CardRight
+
+                  
+                  console.log("Dias restantes Aeroporto: ",diasRestantesTotal, i)
+                  console.log("Faltam ",faltamNA, i)
+
                   left = !left;
                   return left ? (
                     <div key={Date.getTime} className={styles.ContainerCards}>

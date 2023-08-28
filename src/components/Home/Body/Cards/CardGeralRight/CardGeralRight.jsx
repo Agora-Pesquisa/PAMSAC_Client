@@ -11,8 +11,6 @@ const CardGeralRight = (props) => {
   // Estado para armazenar a cor secundária e a imagem facial correspondente
   const [secondaryColor, setSecondaryColor] = useState("");
   const [face, setFace] = useState("");
-  console.log(props.realGol, props.diarioGol);
-
   useEffect(() => {
     // Lógica para determinar a cor e a imagem facial com base nas proporções das companhias e nos valores de faltam
     if (

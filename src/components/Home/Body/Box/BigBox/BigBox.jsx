@@ -23,7 +23,7 @@ const BigBox = (props) => {
       setPrimaryColor(styles.adiantadoPrimaryColor);
       setSecondaryColor(styles.adiantadoSecondaryColor);
     }
-    if (props.real / props.diario === Infinity || props.faltam === 0) {
+    if (props.real / props.diario === Infinity || props.subPercentageTotal - props.subPercentageFeito <= 0) {
       setPrimaryColor(styles.concluidoPrimaryColor);
       setSecondaryColor(styles.concluidoSecondaryColor);
     }
