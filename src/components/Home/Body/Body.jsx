@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Body.module.css";
 import BigBox from "./Box/BigBox/BigBox";
 import AllCompanies from "./Box/AllCompanies/AllCompanies";
@@ -17,9 +17,9 @@ import CardGeralLeft from "./Cards/CardGeralLeft/CardGeralLeft";
 
 // Definindo o componente Body
 const Body = (props) => {
-  setTimeout(function(){
+  setTimeout(function () {
     window.location.reload(1);
- }, 60000 * 30);
+  }, 60000 * 30);
   // Estados para controlar a companhia selecionada, logo selecionado e modelo selecionado
   const [companiaSelecionada, setCompaniaSelecionada] = useState("agora");
   const [logoSelecionado, setLogoSelecionado] = useState(agora_logo);
@@ -47,8 +47,17 @@ const Body = (props) => {
     ...new Set(props.dadosDaAPI.map((item) => item.id_pesquisador)),
   ];
 
-  const medicaoSatisfacao = [...new Set(props.dadosDaAPI.map((item) => item))];
-  medicaoSatisfacao.slice(-2); // Ignorando os dois últimos itens do array
+  const dataMedicaoSatisfacao = [
+    ...new Set(props.dadosDaAPI.map((item) => item)),
+  ].slice(-3);
+
+  const dataAtualizacao = dataMedicaoSatisfacao[0];
+  const medicao = dataMedicaoSatisfacao[1];
+  const satisfacao = dataMedicaoSatisfacao[2];
+
+  // console.log(props.userSelecionado);
+  // console.log(dataMedicaoSatisfacao);
+  // console.log(medicao, satisfacao);
 
   // Inicializando variáveis para cálculos
   var todosPesquisadoresId = [];
@@ -95,7 +104,7 @@ const Body = (props) => {
         {/* Linha divisória */}
         <div
           className={`${styles.Fixed} ${
-            medicaoSatisfacao.length > 0 ? "" : styles.LineLoading
+            dataMedicaoSatisfacao.length > 0 ? "" : styles.LineLoading
           }`}
         >
           <Line loading={true} />
@@ -107,72 +116,92 @@ const Body = (props) => {
           <BigBox
             Title={"Satisfação"}
             real={
-              medicaoSatisfacao.length > 0
-                ? medicaoSatisfacao.slice(-2)[0].Realizado /
-                  todosDiasTrabalhados
+              dataMedicaoSatisfacao.length > 0
+                ? props.userSelecionado === satisfacao["ICAO"]
+                  ? satisfacao.realizado_aero / todosDiasTrabalhados
+                  : satisfacao.realizado_pesquisador / todosDiasTrabalhados
                 : 0
             }
             diario={
-              medicaoSatisfacao.length > 0
-                ? (medicaoSatisfacao.slice(-2)[0].Metas -
-                    medicaoSatisfacao.slice(-2)[0].Realizado) /
-                  diasRestantes
+              dataMedicaoSatisfacao.length > 0
+                ? props.userSelecionado === satisfacao["ICAO"]
+                  ? (satisfacao.meta_aero - satisfacao.realizado_aero) /
+                    diasRestantes
+                  : (satisfacao.meta_pesq - satisfacao.realizado_pesquisador) /
+                    diasRestantes
                 : 0
             }
             Percentage={
-              medicaoSatisfacao.length > 0
-                ? Math.round(
-                    (medicaoSatisfacao.slice(-2)[0].Realizado /
-                      medicaoSatisfacao.slice(-2)[0].Metas) *
-                      100
-                  )
+              dataMedicaoSatisfacao.length > 0
+                ? props.userSelecionado === satisfacao["ICAO"]
+                  ? Math.round(
+                      (satisfacao.realizado_aero / satisfacao.meta_aero) * 100
+                    )
+                  : Math.round(
+                      (satisfacao.realizado_pesquisador /
+                        satisfacao.meta_pesq) *
+                        100
+                    )
                 : 0
             }
             subPercentageFeito={
-              medicaoSatisfacao.length > 0
-                ? medicaoSatisfacao.slice(-2)[0].Realizado
+              dataMedicaoSatisfacao.length > 0
+                ? props.userSelecionado === satisfacao["ICAO"]
+                  ? satisfacao.realizado_aero
+                  : satisfacao.realizado_pesquisador
                 : 0
             }
             subPercentageTotal={
-              medicaoSatisfacao.length > 0
-                ? medicaoSatisfacao.slice(-2)[0].Metas
+              dataMedicaoSatisfacao.length > 0
+                ? props.userSelecionado === satisfacao["ICAO"]
+                  ? satisfacao.meta_aero
+                  : satisfacao.meta_pesq
                 : 0
             }
           />
 
           {/* Segundo BigBox */}
           <BigBox
-            Title={"Medição"}
+            Title={"Satisfação"}
             real={
-              medicaoSatisfacao.length > 0
-                ? medicaoSatisfacao.slice(-2)[1].Realizado /
-                  todosDiasTrabalhados
+              dataMedicaoSatisfacao.length > 0
+                ? props.userSelecionado === medicao["ICAO"]
+                  ? medicao.realizado_aero / todosDiasTrabalhados
+                  : medicao.realizado_pesquisador / todosDiasTrabalhados
                 : 0
             }
             diario={
-              medicaoSatisfacao.length > 0
-                ? (medicaoSatisfacao.slice(-2)[1].Metas -
-                    medicaoSatisfacao.slice(-2)[1].Realizado) /
-                  diasRestantes
+              dataMedicaoSatisfacao.length > 0
+                ? props.userSelecionado === medicao["ICAO"]
+                  ? (satisfacao.meta_aero - medicao.realizado_aero) /
+                    diasRestantes
+                  : (medicao.meta_pesq - medicao.realizado_pesquisador) /
+                    diasRestantes
                 : 0
             }
             Percentage={
-              medicaoSatisfacao.length > 0
-                ? Math.round(
-                    (medicaoSatisfacao.slice(-2)[1].Realizado /
-                      medicaoSatisfacao.slice(-2)[1].Metas) *
-                      100
-                  )
+              dataMedicaoSatisfacao.length > 0
+                ? props.userSelecionado === medicao["ICAO"]
+                  ? Math.round(
+                      (medicao.realizado_aero / medicao.meta_aero) * 100
+                    )
+                  : Math.round(
+                      (medicao.realizado_pesquisador / medicao.meta_pesq) * 100
+                    )
                 : 0
             }
             subPercentageFeito={
-              medicaoSatisfacao.length > 0
-                ? medicaoSatisfacao.slice(-2)[1].Realizado
+              dataMedicaoSatisfacao.length > 0
+                ? props.userSelecionado === medicao["ICAO"]
+                  ? medicao.realizado_aero
+                  : medicao.realizado_pesquisador
                 : 0
             }
             subPercentageTotal={
-              medicaoSatisfacao.length > 0
-                ? medicaoSatisfacao.slice(-2)[1].Metas
+              dataMedicaoSatisfacao.length > 0
+                ? props.userSelecionado === medicao["ICAO"]
+                  ? medicao.meta_aero
+                  : medicao.meta_pesq
                 : 0
             }
           />
@@ -236,6 +265,11 @@ const Body = (props) => {
         <div>
           <div className={styles.ContainerCards}>
             {processos.map((i) => {
+              var metaAzul = 0;
+              var metaGol = 0;
+              var metaLatam = 0;
+              var metaNA = 0;
+
               var realizadoAzul = 0;
               var realizadoGol = 0;
               var realizadoLatam = 0;
@@ -255,11 +289,6 @@ const Body = (props) => {
               var realGol = 0;
               var realLatam = 0;
               var realNA = 0;
-
-              var metaAzul = 0;
-              var metaGol = 0;
-              var metaLatam = 0;
-              var metaNA = 0;
 
               var totalEscalaAeroporto = 0;
               var diasAMaisAeroporto = 0;
@@ -318,11 +347,8 @@ const Body = (props) => {
                 var somaRealizados =
                   realizadoAzul + realizadoGol + realizadoLatam + realizadoNA;
 
-                // Calcula a soma da meta para Latam (outra companhia)
-                var somaMeta = metaLatam * 1;
-
                 // Calcula a quantidade que falta para atingir a meta
-                var somaFaltam = somaMeta - somaRealizados;
+                var somaFaltam = metaLatam - somaRealizados;
                 if (somaFaltam < 0) {
                   somaFaltam = 0;
                 }
@@ -342,8 +368,8 @@ const Body = (props) => {
                   (metaNA > 0 && i === "Desembarque")
                 ) {
                   var diasRestantesTotal =
-                    (totalEscalaAeroporto +
-                    diasAMaisAeroporto) -
+                    totalEscalaAeroporto +
+                    diasAMaisAeroporto -
                     diasFaltados -
                     diasTrabalhados;
 
@@ -362,10 +388,6 @@ const Body = (props) => {
                   );
 
                   // Alterna entre CardLeft e CardRight
-
-                  
-                  console.log("Dias restantes Aeroporto: ",diasRestantesTotal, i)
-                  console.log("Faltam ",faltamNA, i)
 
                   left = !left;
                   return left ? (
@@ -611,11 +633,8 @@ const Body = (props) => {
                 var somaRealizados =
                   realizadoAzul + realizadoGol + realizadoLatam + realizadoNA;
 
-                // Calcula a soma da meta para "N/A"
-                var somaMeta = metaNA * 1;
-
                 // Calcula a quantidade que falta para atingir a meta
-                var somaFaltam = somaMeta - somaRealizados;
+                var somaFaltam = metaNA - somaRealizados;
 
                 if (somaFaltam < 0) {
                   somaFaltam = 0;
@@ -639,9 +658,9 @@ const Body = (props) => {
                         processo={i}
                         realizados={somaRealizados}
                         faltam={
-                          somaMeta - somaRealizados < 0
+                          metaNA - somaRealizados < 0
                             ? 0
-                            : somaMeta - somaRealizados
+                            : metaNA - somaRealizados
                         }
                         diario={
                           // Calcula a média diária com base na situação do usuário selecionado e da companhia
@@ -655,7 +674,7 @@ const Body = (props) => {
                             ? Math.ceil(realNA / diasRestantes)
                             : realNA
                         }
-                        meta={somaMeta}
+                        meta={metaNA}
                         imageCompaniaSrc={logoSelecionado}
                       />
                     </div>
@@ -666,9 +685,9 @@ const Body = (props) => {
                         processo={i}
                         realizados={somaRealizados}
                         faltam={
-                          somaMeta - somaRealizados < 0
+                          metaNA - somaRealizados < 0
                             ? 0
-                            : somaMeta - somaRealizados
+                            : metaNA - somaRealizados
                         }
                         diario={
                           // Calcula a média diária com base na situação do usuário selecionado e da companhia
@@ -682,7 +701,7 @@ const Body = (props) => {
                             ? Math.ceil(realNA / diasTrabalhados)
                             : realNA
                         }
-                        meta={somaMeta}
+                        meta={metaNA}
                         imageCompaniaSrc={logoSelecionado}
                       />
                     </div>
@@ -774,6 +793,16 @@ const Body = (props) => {
           })}
         </div>
       )}
+
+      {/* Div com última descarga, tanto pesquisador quanto aeroporto */}
+
+      <div className={styles.ultimaAtualizacao}>
+          Última Atualização : {dataMedicaoSatisfacao.length > 0
+            ? props.userSelecionado === dataAtualizacao["ICAO"]
+              ? dataAtualizacao["data_fim_aero"]
+              : dataAtualizacao["data_fim_pesq"]
+            : 0}
+      </div>
     </div>
   );
 };

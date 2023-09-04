@@ -22,6 +22,12 @@
   transition: 1.2s ease;
 }
 
+.ultimaAtualizacao{
+  margin-top: 4vw;
+  font-size: 3.5vw;
+  font-weight: 700;
+}
+
 
 .BigBox {
   display: flex;

@@ -1,5 +1,5 @@
 /* URL da API gerada pelo executável do Ngrok */
-const url = "https://8cbc-186-193-48-166.ngrok-free.app";
+const url = "https://d9d1-191-243-124-210.ngrok-free.app";
 
 /* Função que pega as informações dos parametros de Login e senha digitados pelo client e
 faz uma requisição para a API com esses parametros*/
