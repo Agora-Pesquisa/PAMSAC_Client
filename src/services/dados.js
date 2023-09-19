@@ -3,7 +3,7 @@
 /* cd C:\Codes\plataforma-aeroporto\client */
 /* cd C:\Codes\plataforma-aeroporto\server */
 
-const url = "https://72a7-186-193-61-122.ngrok-free.app";
+const url = "https://b9bd-186-193-61-122.ngrok-free.app";
 
 /* Função que pega as informações dos parametros de Login e senha digitados pelo client e
 faz uma requisição para a API com esses parametros*/
