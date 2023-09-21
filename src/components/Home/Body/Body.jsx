@@ -52,8 +52,8 @@ const Body = (props) => {
   ].slice(-3);
 
   const dataAtualizacao = dataMedicaoSatisfacao[0];
-  const medicao = dataMedicaoSatisfacao[1];
-  const satisfacao = dataMedicaoSatisfacao[2];
+  const medicao = dataMedicaoSatisfacao[2];
+  const satisfacao = dataMedicaoSatisfacao[1];
 
   // console.log(props.userSelecionado);
   // console.log(dataMedicaoSatisfacao);
