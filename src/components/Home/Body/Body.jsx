@@ -162,7 +162,7 @@ const Body = (props) => {
 
           {/* Segundo BigBox */}
           <BigBox
-            Title={"Satisfação"}
+            Title={"Medição"}
             real={
               dataMedicaoSatisfacao.length > 0
                 ? props.userSelecionado === medicao["ICAO"]
