@@ -14,7 +14,7 @@ async function getDados(login, senha) {
       "ngrok-skip-browser-warning": "69420",
     }),
   });
-  console.log("services/dados: ", data);
+  // console.log("services/dados: ", data);
 
   const newData = await data.json();
 

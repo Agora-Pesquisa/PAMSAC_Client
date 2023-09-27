@@ -59,7 +59,7 @@ const Home = () => {
         selecionarUser(nomes[indexNome]);
       }
 
-      console.log("Dados API - HOME : ", dadosDaAPI);
+      // console.log("Dados API - HOME : ", dadosDaAPI);
     } catch (error) {
       console.error("Deu erro no Home - fetchDados", error);
       // Navega de volta para a página de Login com estado inválido
