@@ -1,0 +1,23 @@
+.ContainerMasterUserCircle {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.User {
+  width: 17vw;
+  height: 17vw;
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: white;
+}
+
+@media (min-width: 1270px) {
+  .User {
+    width: 60px;
+    height: 60px;
+    border: 3px solid black;
+  }
+}

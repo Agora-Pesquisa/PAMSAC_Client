@@ -1,0 +1,38 @@
+.ContainerMasterHeader {
+  background-color: #2d4059;
+  width: 100vw;
+  height: 22vw;
+  display: flex;
+  position: fixed;
+  transition: ease 0.9s;
+  z-index: 2;
+}
+
+.line {
+  padding-top: 22vw;
+  position: fixed;
+}
+
+.ContainerMasterHeader:hover {
+  background-color: #374c69;
+  transition: ease 1.1s;
+}
+
+.Loading {
+  height: 100vh;
+  position: fixed;
+  transition: ease 1.1s;
+}
+
+@media (min-width: 1270px) {
+  .ContainerMasterHeader {
+    height: 75px;
+    border-bottom: 3px solid black;
+    margin-bottom: 2vw;
+  }
+
+  .Loading {
+    height: 100vh;
+    position: fixed;
+  }
+}

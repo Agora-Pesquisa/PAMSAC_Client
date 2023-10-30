@@ -1,0 +1,289 @@
+.muitoAtrasadoPrimaryColor {
+  background-color: #dc0000;
+}
+
+.muitoAtrasadoSecondaryColor {
+  background-color: #ffeaea;
+}
+
+.atrasadoPrimaryColor {
+  background-color: #f77e21;
+}
+
+.atrasadoSecondaryColor {
+  background-color: #ede1cf;
+}
+
+.normalPrimaryColor {
+  background-color: #f7c04a;
+}
+
+.normalSecondaryColor {
+  background-color: #fff6c2;
+}
+
+.adiantadoPrimaryColor {
+  background-color: #7fb77e;
+}
+
+.adiantadoSecondaryColor {
+  background-color: #d1e9dc;
+}
+
+.concluidoPrimaryColor {
+  background-color: #39a2db;
+}
+
+.concluidoSecondaryColor {
+  background-color: #e0f6fd;
+}
+
+.ContainerMasterCardLeft {
+  overflow: hidden;
+  display: block;
+  margin-top: 5vw;
+  width: 95vw;
+  border-left: 0px;
+  border-radius: 0 5vw 5vw 0;
+
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.subContainerMasterCardLeft {
+  display: flex;
+}
+
+.ContainerImage {
+  display: grid;
+  max-width: 30%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.ContainerInfo {
+  display: flex;
+  justify-content: space-between;
+
+  overflow: hidden;
+  line-height: 6vw;
+}
+
+.ContainerMasterInfo {
+  margin-top: 1.5vw;
+  margin-bottom: 1.5vw;
+
+  margin-left: 6vw;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.Espacamento {
+  margin-top: 5vw;
+}
+
+.ContainerMasterInfo p {
+  padding-right: 20px;
+
+  font-size: 5vw;
+  font-weight: 800;
+  color: #2d4059;
+}
+.face {
+  width: 30vw;
+  height: 20vw;
+}
+
+.processo {
+  margin-left: 20%;
+}
+
+.semCompania {
+  background-color: red;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-right: 0.2vw solid #2d4059;
+  background-color: black;
+}
+
+.compania {
+  flex-shrink: 0;
+  height: 100%;
+  width: 40%;
+  margin-top: -15px;
+  margin-bottom: 20px;
+  margin-left: 30%;
+}
+.TopCardContainer {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  height: 8vw;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  justify-content: space-between;
+  background-color: #7c9d96;
+  color: white;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.TopCardContainer p {
+  color: white;
+  font-size: 5.3vw;
+  font-weight: 800;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Pesquisa {
+  background-color: #60769d
+}
+
+@media (max-width: 500px) {
+  .compania {
+    margin-top: -10px;
+  }
+
+  .face {
+    padding-top: 0px;
+  }
+  .ContainerMasterInfo {
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+  }
+}
+
+@media (min-width: 1270px) {
+  .Espacamento {
+    margin-top: 0;
+  }
+  .TopCardContainer {
+    font-size: 20px;
+    height: 50px;
+  }
+
+  .ContainerMasterCardLeft {
+    width: 10px;
+    min-width: 97vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    margin-top: 0px;
+
+    border: 3px solid black;
+    border-right: 3px solid black;
+    border-radius: 50px 50px 50px 50px;
+  }
+
+  .subContainerMasterCardLeft {
+    margin-bottom: 0;
+  }
+
+  .face {
+    width: 150px;
+    height: 150px;
+    margin-top: -20px;
+  }
+
+  .container {
+    border-right: 3px solid black;
+  }
+
+  .ContainerInfo {
+    line-height: 34px;
+  }
+
+  .ContainerMasterInfo {
+    margin-top: 0.5vw;
+  }
+  .ContainerMasterInfo p {
+    margin-left: 0;
+    font-size: 30px;
+  }
+
+  .BottomCardContainer {
+    height: 50px;
+    padding-left: 3vw;
+    border-top: 3px solid black;
+  }
+
+  .BottomCardContainer p {
+    font-size: 30px;
+  }
+
+  .compania {
+    height: 100px;
+    width: 100px;
+    margin-top: -50px;
+    margin-bottom: 0;
+    margin-bottom: -10px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .ContainerImage {
+    max-width: 20%;
+  }
+}
+
+@media (min-width: 2560px) {
+  .ContainerMasterCardLeft {
+    margin-top: 3vw;
+    width: 10px;
+    min-width: 47.5vw;
+    margin-right: 2.5vw;
+    margin-top: 0px;
+
+    border: 3px solid black;
+    border-left: 0px;
+    border-radius: 0 50px 50px 0;
+  }
+
+  .subContainerMasterCardLeft {
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+  }
+
+  .face {
+    width: 150px;
+    height: 150px;
+  }
+
+  .container {
+    border-right: 3px solid black;
+  }
+
+  .ContainerInfo {
+    line-height: 34px;
+  }
+  .ContainerMasterInfo p {
+    margin-left: 11vw;
+  }
+
+  .BottomCardContainer {
+    height: 50px;
+    padding-left: 3vw;
+    border-top: 3px solid black;
+  }
+
+  .BottomCardContainer p {
+    font-size: 30px;
+  }
+
+  .compania {
+    height: 100px;
+    width: 100px;
+  }
+}

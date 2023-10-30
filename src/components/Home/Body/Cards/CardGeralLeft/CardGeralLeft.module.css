@@ -1,0 +1,152 @@
+.muitoAtrasadoPrimaryColor {
+  background-color: #dc0000;
+}
+
+.muitoAtrasadoSecondaryColor {
+  background-color: #ffeaea;
+}
+
+.atrasadoPrimaryColor {
+  background-color: #f77e21;
+}
+
+.atrasadoSecondaryColor {
+  background-color: #ede1cf;
+}
+
+.normalPrimaryColor {
+  background-color: #f7c04a;
+}
+
+.normalSecondaryColor {
+  background-color: #fff6c2;
+}
+
+.adiantadoPrimaryColor {
+  background-color: #7fb77e;
+}
+
+.adiantadoSecondaryColor {
+  background-color: #d1e9dc;
+}
+
+.concluidoPrimaryColor {
+  background-color: #39a2db;
+}
+
+.concluidoSecondaryColor {
+  background-color: #e0f6fd;
+}
+
+.ContainerMasterCardGeralLeft {
+  overflow: hidden;
+  margin-top: 5vw;
+  width: 95vw;
+  border-left: 0px;
+  border-radius: 0 5vw 5vw 0;
+
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.ContainerInfo {
+  display: flex;
+}
+
+.ContainerMasterCardGeralLeft p {
+  font-size: 5vw;
+  font-weight: 800;
+
+  color: #2d4059;
+}
+
+.ContainerMasterText {
+  width: 35vw;
+}
+
+.ContainerText {
+  margin-left: 2.5vw;
+  margin-bottom: 1.5vw;
+  width: 35vw;
+}
+
+.ImageBox {
+  display: flex;
+  justify-content: center;
+  margin: 2vw 0;
+  margin-left: -5vw;
+}
+
+.face {
+  height: 8vw;
+}
+
+.ContainerProcesso {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  height: 8vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7c9d96;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.ContainerProcesso p {
+  color: white;
+  font-size: 5.3vw;
+  font-weight: 800;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+@media (min-width: 1270px) {
+  .face {
+    height: 75px;
+    width: 75px;
+    margin-top: -15px;
+  }
+  .ImageBox {
+    margin: 0;
+  }
+
+  .ContainerMasterCardGeralLeft {
+    width: 10px;
+    min-width: 97vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    margin-top: 1.5vw;
+    border: 3px solid black;
+    border-right: 3px solid black;
+    border-radius: 50px 50px 50px 50px;
+  }
+
+  .ContainerMasterCardGeralLeft p {
+    font-size: 30px;
+    font-weight: 800;
+
+    color: white;
+  }
+
+  .ContainerProcesso {
+    border-top: 0;
+    height: 50px;
+  }
+
+  .ContainerProcesso p {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .ContainerText {
+    margin-left: 1.5vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    width: 12.5vw;
+  }
+
+  .ContainerMasterText {
+    border-top: 3px solid black;
+    width: 35vw;
+  }
+}

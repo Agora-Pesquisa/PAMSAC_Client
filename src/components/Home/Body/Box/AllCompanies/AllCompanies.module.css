@@ -1,0 +1,62 @@
+.ContainerMasterAllCompanies {
+  width: 90vw;
+
+  background-color: white;
+  margin-left: 5vw;
+  margin-top: 3vw;
+  padding: 1.5vw;
+  border-radius: 2.5vw;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  color: #be214f;
+
+  font-size: 5vw;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.Selected {
+  -webkit-animation: fadeinout 0.3s ease-in-out;
+  animation: fadeinout 0.3s ease-in-out;
+}
+
+.Opaco {
+  opacity: 50%;
+  transition: 0.25s ease;
+}
+
+@-webkit-keyframes fadeinout {
+  0%,
+  100% {
+    background-color: white;
+    color: #be214f;
+  }
+  50% {
+    background-color: #e6d5ce;
+    color: #2d4059;
+  }
+}
+
+@keyframes fadeinout {
+  0%,
+  100% {
+    background-color: white;
+    color: #be214f;
+  }
+  50% {
+    background-color: #e6d5ce;
+    color: #2d4059;
+  }
+}
+
+@media (min-width: 1270px) {
+  .ContainerMasterAllCompanies {
+    width: 40vw;
+    margin: 0;
+    padding: 15px;
+
+    font-size: 2.5vw;
+  }
+}

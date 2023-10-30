@@ -1,0 +1,43 @@
+.ContainerMasterLine {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.LineYellow {
+  margin-top: 0;
+  height: 1vw;
+
+  width: 50vw;
+  background-color: #fbb019;
+}
+
+.LineRed {
+  margin-top: 0;
+  height: 1vw;
+
+  width: 50vw;
+  background-color: #be214f;
+}
+
+.LineYellowLoading {
+  height: 100vw;
+  margin-top: -77vw;
+
+  width: 50vw;
+  background-color: #fbb019;
+}
+
+.LineRedLoading {
+  height: 100vw;
+  margin-top: -77vw;
+
+  width: 50vw;
+  background-color: #be214f;
+}
+
+@media (min-width: 1270px) {
+  .ContainerMasterLine {
+    display: none;
+  }
+}

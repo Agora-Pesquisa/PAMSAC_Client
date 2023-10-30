@@ -1,0 +1,51 @@
+.ContainerMasterCompanyBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1vw;
+  margin-bottom: 1.5vw;
+  min-width: 25vw;
+  height: 25vw;
+  border-radius: 5vw;
+  border: none;
+  background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.25s ease;
+}
+
+.ContainerMasterCompanyBox img {
+  flex-shrink: 0;
+  width: 80%;
+  height: 80%;
+}
+
+.Selected {
+  background-color: #e6d5ce;
+  transition: 0.25 ease;
+}
+
+.Opaco {
+  opacity: 50%;
+  transition: 0.25s ease;
+}
+
+@media (min-width: 1270px) {
+  .ContainerMasterCompanyBox {
+    margin-right: 3vw;
+    min-width: 10vw;
+    max-width: 10vw;
+    height: 10vw;
+    border-radius: 25px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .ContainerMasterCompanyBox {
+    margin-right: 5px;
+    min-width: 8vw;
+    max-width: 8vw;
+    height: 8vw;
+    border-radius: 25px;
+    border: 2px solid black;
+  }
+}
