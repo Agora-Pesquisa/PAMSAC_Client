@@ -114,7 +114,7 @@ const Body = (props) => {
         <div className={styles.BigBox}>
           {/* Primeiro BigBox */}
           <BigBox
-            Title={"Satisfação"}
+            Title={"Medição"}
             real={
               dataMedicaoSatisfacao.length > 0
                 ? props.userSelecionado === satisfacao["ICAO"]
@@ -162,7 +162,7 @@ const Body = (props) => {
 
           {/* Segundo BigBox */}
           <BigBox
-            Title={"Medição"}
+            Title={"Satisfação"}
             real={
               dataMedicaoSatisfacao.length > 0
                 ? props.userSelecionado === medicao["ICAO"]
