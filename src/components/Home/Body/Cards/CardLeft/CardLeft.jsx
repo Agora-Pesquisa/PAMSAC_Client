@@ -89,7 +89,8 @@ const CardLeft = (props) => {
           {/* Informações sobre o diário */}
           <div className={styles.ContainerInfo}>
             <p>· Diário</p>
-            <p>{props.diario < 0 || props.faltam === 0 ? 0 : props.diario === 0 && props.faltam >= 1 ? 1 : props.diario === Infinity ? 0 : props.diario}</p>
+            <p>{props.diario < 0 || props.faltam === 0 ? 0 : props.diario === 0 && props.faltam >= 1 ? 1 : props.diario}</p>
+
           </div>
         </div>
       </div>
