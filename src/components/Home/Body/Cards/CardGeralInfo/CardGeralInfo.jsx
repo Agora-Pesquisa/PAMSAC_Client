@@ -36,8 +36,7 @@ const CardGeralInfo = (props) => {
         <p>{props.meta}</p>
         <p>{props.realizados}</p>
         <p>{props.faltam}</p>
-        <p>{props.diario < 0 || props.faltam === 0 ? 0 : props.diario === 0 && props.faltam >= 1 ? 1 : props.diario}</p>
-
+        <p>{props.diario < 0 || props.faltam === 0 ? 0 : props.diario === 0 && props.faltam >= 1 ? 1 : props.diario === Infinity ? props.faltam : props.diario}</p>
 
       </div>
     </div>
