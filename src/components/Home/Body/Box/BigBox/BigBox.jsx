@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react"; // Importação do React e dos hooks necessários
-import styles from "./BigBox.module.css"; // Importação do módulo de estilos específico para o componente BigBox
+import React, { useEffect, useState } from "react"; 
+import styles from "./BigBox.module.css"; 
 
 const BigBox = (props) => {
-  const [primaryColor, setPrimaryColor] = useState(""); // Estado para a cor primária
-  const [secondaryColor, setSecondaryColor] = useState(""); // Estado para a cor secundária
+  const [primaryColor, setPrimaryColor] = useState("");
+  const [secondaryColor, setSecondaryColor] = useState(""); 
 
   useEffect(() => {
-    // Efeito que atualiza as cores com base na prop.real e prop.diario
     if (props.real / props.diario <= 0.6) {
       setPrimaryColor(styles.muitoAtrasadoPrimaryColor);
       setSecondaryColor(styles.muitoAtrasadoSecondaryColor);
@@ -29,7 +28,6 @@ const BigBox = (props) => {
     }
   }, [props.diario, props.real]);
 
-  // Renderização do componente BigBox com base nas props recebidas
   return (
     <div className={styles.ContainerMasterBigBox}>
       <div className={`${styles.BigBox} ${secondaryColor}`}>
@@ -51,5 +49,4 @@ const BigBox = (props) => {
   );
 };
 
-// Exportação do componente BigBox
 export default BigBox;
