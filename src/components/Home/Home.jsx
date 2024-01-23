@@ -24,8 +24,6 @@ const Home = () => {
   async function fetchDados() {
     try {
       const dadosDaAPI = await getDados(login, senha);
-      console.log("Dados da API - Home: ", dadosDaAPI);
-
       const ids = [...new Set(dadosDaAPI.map((item) => item.id_pesquisador))];
       const nomes = [...new Set(dadosDaAPI.map((item) => item.Pesquisador))];
       const indexNome = ids.indexOf(Number(senha));
