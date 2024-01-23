@@ -1,15 +1,13 @@
-import React from "react"; // Importação do React
-import styles from "./User.module.css"; // Importação do módulo de estilos específico para o componente
+import React from "react";
+import styles from "./User.module.css"; 
 
-// Componente funcional para exibir o nome do usuário
 const User = (props) => {
-  // Renderização do componente User
   return (
     <div
-      id={props.user} // Define o ID do elemento com base no usuário recebido via propriedade
+      id={props.user} 
       className={`${styles.ContainerMasterUser} , ${
         props.user === "Bem-vindo!" ? styles.Loading : ""
-      }`} // Aplica a classe de estilo ao contêiner do nome do usuário
+      }`} 
     >
       {props.user === "Bem-vindo!" ? (
         <div className={styles.Welcome}>
@@ -29,5 +27,4 @@ const User = (props) => {
   );
 };
 
-// Exportação do componente User
 export default User;
