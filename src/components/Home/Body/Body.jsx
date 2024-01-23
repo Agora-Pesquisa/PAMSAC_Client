@@ -55,9 +55,9 @@ const Body = (props) => {
   const medicao = dataMedicaoSatisfacao[2];
   const satisfacao = dataMedicaoSatisfacao[1];
 
-  // console.log(props.userSelecionado);
-  // console.log(dataMedicaoSatisfacao);
-  // console.log(medicao, satisfacao);
+  console.log("User Selecionado: ",props.userSelecionado);
+  console.log("Data Medição e Satisfação: ", dataMedicaoSatisfacao);
+  console.log("Medição e Satisfação:", medicao, satisfacao);
 
   // Inicializando variáveis para cálculos
   var todosPesquisadoresId = [];
