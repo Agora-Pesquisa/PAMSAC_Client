@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react"; // Importação do React e hooks
-import styles from "./CardGeralInfo.module.css"; // Importação do módulo de estilos específico para o componente CardGeralInfo
+import React, { useEffect, useState } from "react"; 
+import styles from "./CardGeralInfo.module.css"; 
 
 const CardGeralInfo = (props) => {
-  // Estado para armazenar a cor secundária das informações
   const [secondaryColorInfo, setSecondaryColorInfo] = useState("");
 
   useEffect(() => {
-    // Lógica para determinar a cor secundária com base na proporção real/diário e no valor de faltam
     if (props.real / props.diario <= 0.7) {
       setSecondaryColorInfo(styles.muitoAtrasadoSecondaryColor);
     }
@@ -25,19 +23,15 @@ const CardGeralInfo = (props) => {
   }, [props.real, props.diario]);
 
   return (
-    // Contêiner principal das informações gerais
     <div className={`${styles.ContainerMasterText} ${secondaryColorInfo}`}>
-      {/* Contêiner para a imagem da companhia */}
       <div className={styles.ContainerCompania}>
         <img className={styles.image} src={props.compania} alt="Compania" />
       </div>
-      {/* Contêiner para os textos das informações */}
       <div className={styles.ContainerText}>
         <p>{props.meta}</p>
         <p>{props.realizados}</p>
         <p>{props.faltam}</p>
         <p>{props.diario < 0 || props.faltam === 0 ? 0 : props.diario === 0 && props.faltam >= 1 ? 1 : props.diario == Infinity ? props.faltam : props.diario}</p>
-
       </div>
     </div>
   );
