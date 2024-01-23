@@ -50,9 +50,9 @@ const Body = (props) => {
   const medicao = dataMedicaoSatisfacao[2];
   const satisfacao = dataMedicaoSatisfacao[1];
 
-  console.log("User Selecionado: ",props.userSelecionado);
-  console.log("Data Medição e Satisfação: ", dataMedicaoSatisfacao);
-  console.log("Medição e Satisfação:", medicao, satisfacao);
+  // console.log("User Selecionado: ",props.userSelecionado);
+  // console.log("Data Medição e Satisfação: ", dataMedicaoSatisfacao);
+  // console.log("Medição e Satisfação:", medicao, satisfacao);
 
   var todosPesquisadoresId = [];
   var todosDiasAMais = 0;
