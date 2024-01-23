@@ -11,21 +11,17 @@ import Azul_logo from "../../../assets/companias/azul.svg";
 import Gol_logo from "../../../assets/companias/gol.svg";
 import Latam_logo from "../../../assets/companias/latam.svg";
 import agora_logo from "../../../assets/companias/agora.svg";
-
 import CardGeralRight from "./Cards/CardGeralRight/CardGeralRight";
 import CardGeralLeft from "./Cards/CardGeralLeft/CardGeralLeft";
 
-// Definindo o componente Body
 const Body = (props) => {
   setTimeout(function () {
     window.location.reload(1);
   }, 60000 * 30);
-  // Estados para controlar a companhia selecionada, logo selecionado e modelo selecionado
   const [companiaSelecionada, setCompaniaSelecionada] = useState("agora");
   const [logoSelecionado, setLogoSelecionado] = useState(agora_logo);
   const [modeloSelecionado, setModeloSelecionado] = useState("Doméstico");
 
-  // Funções para atualizar os estados de compania, logo e modelo selecionados
   const selecionarCompania = (compania) => {
     setCompaniaSelecionada(compania);
   };
@@ -38,7 +34,6 @@ const Body = (props) => {
     setModeloSelecionado(modelo);
   };
 
-  // Mapeamento de valores únicos a partir dos dados da API
   const processos = [...new Set(props.dadosDaAPI.map((item) => item.Processo))];
   const companhias = [
     ...new Set(props.dadosDaAPI.map((item) => item.Companhia)),
@@ -59,7 +54,6 @@ const Body = (props) => {
   console.log("Data Medição e Satisfação: ", dataMedicaoSatisfacao);
   console.log("Medição e Satisfação:", medicao, satisfacao);
 
-  // Inicializando variáveis para cálculos
   var todosPesquisadoresId = [];
   var todosDiasAMais = 0;
   var todosDiasFaltados = 0;
@@ -67,7 +61,6 @@ const Body = (props) => {
   var totalDaEscala = 0;
   var diasRestantes = 0;
 
-  // Cálculo do total da escala total para cada pesquisador
   const totalEscalaTotal = [
     ...new Set(
       pesquisadores.forEach((pesquisadorID) => {
@@ -94,7 +87,6 @@ const Body = (props) => {
     ),
   ];
 
-  // Variáveis de controle
   var left = true;
   var aeroporto = "";
 
@@ -210,15 +202,14 @@ const Body = (props) => {
         {/* Linha divisória */}
         <Line />
 
-        {/* Container de categorias de empresas */}
         <div className={styles.ContainerCategoryCompanyBox}>
-          {/* Componente para selecionar o modelo */}
+          {/* Componente para selecionar a categoria */}
           <SwitchCategory
             selecionarModelo={selecionarModelo}
             modeloSelecionado={modeloSelecionado}
           />
 
-          {/* Container de caixas de empresas */}
+          {/* Container com as companias */}
           <div className={styles.CompanyBox}>
             {companhias.map((i) => {
               if (i === "Azul" || i === "Gol" || i === "Latam") {
@@ -233,7 +224,6 @@ const Body = (props) => {
                 }
                 return (
                   <div key={Date.getTime}>
-                    {/* Componente para exibir informações da empresa */}
                     <CompanyBox
                       modelo={modeloSelecionado}
                       logo={logo}
@@ -247,8 +237,7 @@ const Body = (props) => {
               }
             })}
           </div>
-
-          {/* Componente para exibir informações gerais de todas as empresas */}
+          
           <div>
             <AllCompanies
               compania={"agora"}
@@ -295,43 +284,41 @@ const Body = (props) => {
               var diasFaltados = 0;
               var diasTrabalhados = 0;
 
-              // Mapear dados da API
               props.dadosDaAPI.map((item) => {
-                // Armazenar o código do aeroporto
                 aeroporto = item.ICAO;
 
-                // Verificar se os critérios correspondem ao item
                 if (
                   (item.Pesquisador === props.userSelecionado ||
                     item.ICAO === props.userSelecionado) &&
                   item.Estrato === modeloSelecionado &&
                   item.Processo === i
                 ) {
-                  // Atualizar variáveis com base nos valores do item
                   totalEscalaAeroporto = item.total_escala_aero;
                   diasAMaisAeroporto = item.dias_a_mais_aero;
                   diasFaltados = item.dias_faltados_aero;
                   diasTrabalhados = item.dias_trabalhados_aero;
-
-                  // Verificar a Companhia do item e atualizar variáveis correspondentes
+                  
                   if (item.Companhia === "Azul") {
                     realizadoAzul += item.Realizado;
                     faltamAzul += item.Faltam;
                     diarioAzul += item.média_diária_ideal;
                     realAzul += item.média_diária_real;
                     metaAzul += item.Meta;
+                    
                   } else if (item.Companhia === "Gol") {
                     realizadoGol += item.Realizado;
                     faltamGol += item.Faltam;
                     diarioGol += item.média_diária_ideal;
                     realGol += item.média_diária_real;
                     metaGol += item.Meta;
+                    
                   } else if (item.Companhia === "Latam") {
                     realizadoLatam += item.Realizado;
                     faltamLatam += item.Faltam;
                     diarioLatam += item.média_diária_ideal;
                     realLatam += item.média_diária_real;
                     metaLatam += item.Meta;
+                    
                   } else if (item.Companhia === "N/A") {
                     realizadoNA += item.Realizado;
                     faltamNA += item.Faltam;
@@ -343,26 +330,17 @@ const Body = (props) => {
               });
 
               if (modeloSelecionado === "Doméstico") {
-                // Calcula a soma dos realizados para todas as companhias
                 var somaRealizados =
                   realizadoAzul + realizadoGol + realizadoLatam + realizadoNA;
-
-                // Calcula a quantidade que falta para atingir a meta
                 var somaFaltam = metaLatam - somaRealizados;
                 if (somaFaltam < 0) {
                   somaFaltam = 0;
                 }
-
-                // Calcula a soma da meta para "N/A" (outra companhia)
                 var somaMetaNA = metaNA * 1;
-
-                // Calcula a quantidade que falta para atingir a meta para "N/A"
                 var somaFaltamNA = somaMetaNA - somaRealizados;
                 if (somaFaltamNA < 0) {
                   somaFaltamNA = 0;
                 }
-
-                // Verifica condições para renderização do CardLeft ou CardRight
                 if (
                   (metaNA > 0 && i === "Embarque") ||
                   (metaNA > 0 && i === "Desembarque")
@@ -386,9 +364,6 @@ const Body = (props) => {
                   var realAeroporto = Math.ceil(
                     somaRealizados / diasTrabalhados
                   );
-
-                  // Alterna entre CardLeft e CardRight
-
                   left = !left;
                   return left ? (
                     <div key={Date.getTime} className={styles.ContainerCards}>
@@ -440,10 +415,8 @@ const Body = (props) => {
                     </div>
                   );
                 }
-
-                // Verifica se a meta "N/A" é maior que 0 e não é "Embarque" ou "Desembarque"
+                
                 if (metaNA > 0 && i !== "Embarque" && i !== "Desembarque") {
-                  // Alterna entre CardLeft e CardRight
                   left = !left;
                   return left ? (
                     <div key={Date.getTime} className={styles.ContainerCards}>
@@ -495,14 +468,11 @@ const Body = (props) => {
                     </div>
                   );
                 }
-
-                // Verifica se há metas para outras companhias além de "N/A"
                 if (
                   (metaAzul > 0 && i !== "Embarque" && i !== "Desembarque") ||
                   (metaGol > 0 && i !== "Embarque" && i !== "Desembarque") ||
                   (metaLatam > 0 && i !== "Embarque" && i !== "Desembarque")
                 ) {
-                  // Alterna entre CardGeralLeft e CardGeralRight
                   left = !left;
                   return left ? (
                     <div key={Date.getTime}>
@@ -629,30 +599,21 @@ const Body = (props) => {
               }
 
               if (modeloSelecionado === "Internacional") {
-                // Calcula a soma dos realizados para todas as companhias
                 var somaRealizados =
                   realizadoAzul + realizadoGol + realizadoLatam + realizadoNA;
-
-                // Calcula a quantidade que falta para atingir a meta
                 var somaFaltam = metaNA - somaRealizados;
 
                 if (somaFaltam < 0) {
                   somaFaltam = 0;
                 }
-
-                // Verifica se há metas para outras companhias além de "N/A"
                 if (
                   metaAzul > 0 ||
                   metaGol > 0 ||
                   metaLatam > 0 ||
                   metaNA > 0
                 ) {
-                  // Inverte o valor de "left" para alternar entre renderizar CardLeft e CardRight
                   left = !left;
-
-                  // Verifica se a variável "left" é verdadeira
                   return left ? (
-                    // Renderiza um CardLeft com as informações do processo atual
                     <div key={Date.getTime} className={styles.ContainerCards}>
                       <CardLeft
                         processo={i}
@@ -663,13 +624,11 @@ const Body = (props) => {
                             : metaNA - somaRealizados
                         }
                         diario={
-                          // Calcula a média diária com base na situação do usuário selecionado e da companhia
                           aeroporto === props.userSelecionado
                             ? Math.ceil(diarioNA / diasRestantes)
                             : diarioNA
                         }
                         real={
-                          // Calcula a média diária real com base na situação do usuário selecionado e da companhia
                           aeroporto === props.userSelecionado
                             ? Math.ceil(realNA / diasRestantes)
                             : realNA
@@ -679,7 +638,6 @@ const Body = (props) => {
                       />
                     </div>
                   ) : (
-                    // Caso "left" seja falso, renderiza um CardRight com as mesmas informações
                     <div key={Date.getTime} className={styles.ContainerCards}>
                       <CardRight
                         processo={i}
@@ -690,13 +648,11 @@ const Body = (props) => {
                             : metaNA - somaRealizados
                         }
                         diario={
-                          // Calcula a média diária com base na situação do usuário selecionado e da companhia
                           aeroporto === props.userSelecionado
                             ? Math.ceil(diarioNA / diasRestantes)
                             : diarioNA
                         }
                         real={
-                          // Calcula a média diária real com base na situação do usuário selecionado e da companhia
                           aeroporto === props.userSelecionado
                             ? Math.ceil(realNA / diasTrabalhados)
                             : realNA
@@ -714,7 +670,6 @@ const Body = (props) => {
       ) : (
         <div className={styles.ContainerCards}>
           {props.dadosDaAPI.map((item) => {
-            // Verifica se o item atende aos critérios para exibição de cards no modo Doméstico
             if (
               (item.Pesquisador === props.userSelecionado ||
                 item.ICAO === props.userSelecionado) &&
@@ -724,10 +679,8 @@ const Body = (props) => {
               item.Processo !== "Desembarque" &&
               modeloSelecionado === "Doméstico"
             ) {
-              // Alterna a exibição entre CardLeft e CardRight com base na variável "left"
               left = !left;
               return left ? (
-                // Renderiza um CardLeft com as informações do item
                 <div key={Date.getTime} className={styles.ContainerCards}>
                   <CardLeft
                     estrato={modeloSelecionado}
@@ -753,7 +706,6 @@ const Body = (props) => {
                   />
                 </div>
               ) : (
-                // Renderiza um CardRight com as informações do item
                 <div key={Date.getTime} className={styles.ContainerCards}>
                   <CardRight
                     estrato={modeloSelecionado}
@@ -780,22 +732,17 @@ const Body = (props) => {
                 </div>
               );
             }
-            // Verifica se o item atende aos critérios para alterar a companhia selecionada no modo Internacional
             if (
               (item.Pesquisador === props.userSelecionado ||
                 item.ICAO === props.userSelecionado) &&
               item.Companhia === companiaSelecionada &&
               modeloSelecionado === "Internacional"
             ) {
-              // Define "companiaSelecionada" como "agora"
               setCompaniaSelecionada("agora");
             }
           })}
         </div>
       )}
-
-      {/* Div com última descarga, tanto pesquisador quanto aeroporto */}
-
       <div className={styles.ultimaAtualizacao}>
           Última Atualização : {dataMedicaoSatisfacao.length > 0
             ? props.userSelecionado === dataAtualizacao["ICAO"]
