@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from "react"; // Importação do React e hooks
-import styles from "./CardGeralRight.module.css"; // Importação do módulo de estilos específico para o componente CardGeralRight
-import CardGeralInfo from "../CardGeralInfo/CardGeralInfo"; // Importação do componente CardGeralInfo
-import concluido from "../../../../../assets/faces/concluido.svg"; // Importação da imagem de conclusão
-import adiantado from "../../../../../assets/faces/adiantado.svg"; // Importação da imagem de adiantamento
-import normal from "../../../../../assets/faces/normal.svg"; // Importação da imagem normal
-import muitoAtrasado from "../../../../../assets/faces/muito-atrasado.svg"; // Importação da imagem de muito atraso
-import atrasado from "../../../../../assets/faces/atrasado.svg"; // Importação da imagem de atraso
+import React, { useEffect, useState } from "react"; 
+import styles from "./CardGeralRight.module.css"; 
+import CardGeralInfo from "../CardGeralInfo/CardGeralInfo"; 
+import concluido from "../../../../../assets/faces/concluido.svg"; 
+import adiantado from "../../../../../assets/faces/adiantado.svg"; 
+import normal from "../../../../../assets/faces/normal.svg"; 
+import muitoAtrasado from "../../../../../assets/faces/muito-atrasado.svg"; 
+import atrasado from "../../../../../assets/faces/atrasado.svg"; 
 
 const CardGeralRight = (props) => {
-  // Estado para armazenar a cor secundária e a imagem facial correspondente
   const [secondaryColor, setSecondaryColor] = useState("");
   const [face, setFace] = useState("");
   useEffect(() => {
-    // Lógica para determinar a cor e a imagem facial com base nas proporções das companhias e nos valores de faltam
     if (
       props.realAzul / props.diarioAzul > 1.1 ||
       props.realGol / props.diarioGol > 1.1 ||
@@ -78,24 +76,19 @@ const CardGeralRight = (props) => {
   ]);
 
   return (
-    // Contêiner principal do componente CardGeralRight
     <div
       className={`${styles.ContainerMasterCardGeralRight} ${secondaryColor}`}
     >
-      {/* Contêiner do processo e da opção "Todos" */}
       <div className={`${styles.ContainerProcesso}`}>
         <p>{props.processo}</p>
       </div>
 
-      {/* Contêiner para as informações gerais */}
       <div className={styles.ContainerInfo}>
         <div className={styles.ContainerMasterText}>
-          {/* Contêiner para a imagem facial */}
           <div className={styles.ContainerText}>
             <div className={styles.ImageBox}>
               <img className={styles.face} src={face} alt={face} />
             </div>
-            {/* Títulos das informações */}
             <p>· Meta </p>
             <p>· Realizados </p>
             <p>· Faltam </p>
@@ -103,7 +96,6 @@ const CardGeralRight = (props) => {
           </div>
         </div>
 
-        {/* Componente CardGeralInfo para exibir informações da companhia Azul */}
         <CardGeralInfo
           compania={props.companiaAzul}
           realizados={props.realizadoAzul}
@@ -113,7 +105,6 @@ const CardGeralRight = (props) => {
           meta={props.metaAzul}
         />
 
-        {/* Componente CardGeralInfo para exibir informações da companhia Gol */}
         <CardGeralInfo
           compania={props.companiaGol}
           realizados={props.realizadoGol}
@@ -123,7 +114,6 @@ const CardGeralRight = (props) => {
           meta={props.metaGol}
         />
 
-        {/* Componente CardGeralInfo para exibir informações da companhia Latam */}
         <CardGeralInfo
           processo={props.processoLatam}
           compania={props.companiaLatam}
