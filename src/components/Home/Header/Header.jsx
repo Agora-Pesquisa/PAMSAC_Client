@@ -5,7 +5,11 @@ import styles from "./Header.module.css";
 
 const Header = (props) => {
   const handleClick = (e) => {
-    props.selecionarUser(e.target.id);
+    if (e.target.id === "") {
+      return;
+    } else {
+      props.selecionarUser(e.target.id);
+    }
   };
 
   return (
