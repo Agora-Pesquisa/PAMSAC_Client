@@ -1,4 +1,4 @@
-const url = "https://cb44-20-168-42-226.ngrok-free.app";
+const url = "https://6a29-20-168-42-226.ngrok-free.app";
 
 async function getDados(login, senha) {
   const data = await fetch(`${url}/PAMSAC/login/${login}/${senha}`, {
