@@ -1,5 +1,6 @@
 const url = "https://e4dae4708f1c.ngrok-free.app";
 
+
 async function getDados(login, senha) {
   const data = await fetch(`${url}/PAMSAC/login/${login}/${senha}`, {
     method: "get",
